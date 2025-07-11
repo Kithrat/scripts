@@ -4,7 +4,7 @@
 
 PWS=$HOME/.password-store/
 
-PW="$(find "$PWS" -type f -not -path '*/.g*'  | rofi -dmenu -i -p 'Choose pw: ' | sed -e "s|$PWS||" -e "s/\.gpg//")" || exit 0
+PW="$(find "$PWS" -type f -not -path '*/.g*' |  rofi -dmenu -i -p 'Choose pw: ' | sed -e "s|$PWS||" -e "s/\.gpg//")" || exit 0
 
 if [[ -n $PW ]]; then
   pass -c "$PW"
